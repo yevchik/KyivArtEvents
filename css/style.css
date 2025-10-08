@@ -1,5 +1,5 @@
 ﻿
-/* ФОН + БАЗА */
+
 body {
     background-image: url("../assets/kyiv1.jpg");
     background-size: contain;
@@ -18,12 +18,13 @@ img {
     display: block;
 }
 
-/* НАЗВА САЙТУ ЗВЕРХУ ЗЛІВА, 2 РЯДКИ */
 .site-header {
-    position: fixed;
-    top: 24px;
-    left: 32px;
-    z-index: 10;
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 12px;
+    padding: 8px 12px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 .logo {
@@ -35,25 +36,19 @@ img {
     text-shadow: 0 6px 24px rgba(0,0,0,.45), 0 1px 0 #000;
 }
 
-    .logo .line1 { /* Kyiv Art */
+    .logo .line1 { 
         display: block;
         font-size: clamp(50px, 12vw, 150px);
     }
 
-    .logo .line2 { /* Events */
+    .logo .line2 { 
         display: block;
         margin-top: -.08em;
         font-size: clamp(42px, 10vw, 120px);
     }
-
-/* ЩОБ КОНТЕНТ НЕ ЗАЛАЗИВ ПІД ФІКСОВАНУ НАЗВУ */
 main {
     padding-top: clamp(120px, 24vw, 260px);
 }
-
-/* ===== АДАПТИВНІ БРЕЙКПОІНТИ ===== */
-
-/* ноутбуки/планшети */
 @media (max-width: 1024px) {
     .site-header {
         top: 20px;
@@ -72,8 +67,6 @@ main {
         padding-top: clamp(120px, 28vw, 280px);
     }
 }
-
-/* планшети вертикально / великі телефони */
 @media (max-width: 768px) {
     .site-header {
         top: 16px;
@@ -92,8 +85,6 @@ main {
         padding-top: clamp(110px, 34vw, 300px);
     }
 }
-
-/* вузькі телефони */
 @media (max-width: 420px) {
     .logo {
         letter-spacing: .04em;
@@ -111,7 +102,6 @@ main {
         padding-top: clamp(100px, 38vw, 320px);
     }
 }
-/* ФУТЕР ПРИКРІПЛЕНИЙ ДО НИЗУ */
 .footer {
     position: fixed;
     left: 0;
@@ -119,12 +109,10 @@ main {
     bottom: 0;
     padding: 10px 16px;
     color: #fff;
-    background: rgba(0,0,0,.38); /* напівпрозорий фон, щоб читалося на фото */
+    background: rgba(0,0,0,.38); 
     border-top: 1px solid rgba(255,255,255,.25);
     z-index: 20;
 }
-
-    /* вміст футера в рядок */
     .footer .wrap {
         max-width: 1200px;
         margin: 0 auto;
@@ -154,19 +142,14 @@ main {
             text-decoration: underline;
             opacity: 1;
         }
-
-/* щоб футер не перекривав контент */
 body {
     padding-bottom: 70px;
 }
-/* можна підкоригувати висоту під свій футер */
 @media (max-width: 480px) {
     body {
         padding-bottom: 86px;
     }
 }
-
-/* ===== ТОП-МЕНЮ У ПРАВОМУ ВЕРХНЬОМУ КУТІ ===== */
 .topnav {
     position: fixed;
     top: 20px;
@@ -195,8 +178,6 @@ body {
             background: rgba(255,255,255,.22);
             transform: translateY(-1px);
         }
-
-    /* лічильник у «Кошик» */
     .topnav .badge {
         margin-left: 6px;
         padding: 2px 6px;
@@ -206,8 +187,6 @@ body {
         font-size: 12px;
         line-height: 1;
     }
-
-/* АДАПТИВНІСТЬ меню, щоб вміщувалось на вузьких екранах */
 @media (max-width: 900px) {
     .topnav {
         gap: 8px;
@@ -239,7 +218,6 @@ body {
             padding: 2px 5px;
         }
 }
-/* ===== КНОПКА МЕНЮ + СТИЛІ ПАНЕЛІ (як раніше, "скло") ===== */
 .menu {
     position: fixed;
     top: 16px;
@@ -251,13 +229,9 @@ body {
     .menu details {
         position: relative;
     }
-
-    /* прибрати стандартний маркер summary */
     .menu summary::-webkit-details-marker {
         display: none;
     }
-
-/* кнопка "Меню" */
 .menu-btn {
     cursor: pointer;
     display: inline-flex;
@@ -285,8 +259,6 @@ body {
         font-size: 12px;
         opacity: .9;
     }
-
-/* панель, що випадає */
 .menu-panel {
     position: absolute;
     right: 0;
@@ -303,8 +275,6 @@ body {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 16px 36px rgba(0,0,0,.35);
 }
-
-/* заголовок у панелі */
 .menu-title {
     margin: 2px 4px 8px;
     font-weight: 700;
@@ -312,7 +282,6 @@ body {
     color: #fff;
 }
 
-/* пункти меню — БІЛІ, БЕЗ ПІДКРЕСЛЕННЯ */
 .menu-link {
     display: block;
     padding: 9px 10px;
@@ -329,8 +298,6 @@ body {
     .menu-link:hover {
         background: rgba(255,255,255,.18);
     }
-
-/* бейдж у "Кошик" */
 .menu .badge {
     margin-left: 6px;
     padding: 2px 6px;
@@ -340,8 +307,6 @@ body {
     font-size: 12px;
     line-height: 1;
 }
-
-/* дрібна адаптація */
 @media (max-width: 600px) {
     .menu {
         top: 12px;
@@ -364,8 +329,6 @@ body {
         border-radius: 8px;
     }
 }
-
-/* Адаптивна GRID-сітка */
 .cards {
     --gap: 16px;
     display: grid;
@@ -382,12 +345,11 @@ body {
     border-radius: 14px;
     overflow: hidden;
     backdrop-filter: blur(4px);
-    transition: transform .3s ease, box-shadow .3s ease, background .2s, opacity .4s;
-    /* замість transform: translateY(...) — тільки прозорість/blur */
+    transition: transform .3s ease, box-shadow .3s ease, background .2s, opacity .4s
     opacity: 0;
     filter: blur(6px);
     animation: cardIn .5s ease forwards;
-    will-change: transform, box-shadow; /* для плавності hover */
+    will-change: transform, box-shadow; 
 }
 
 @keyframes cardIn {
@@ -434,8 +396,6 @@ body {
     .card .btn:hover {
         background: rgba(255,255,255,.3);
     }
-
-/* брейкпоінти сітки */
 @media (max-width: 1024px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -447,14 +407,11 @@ body {
         grid-template-columns: 1fr;
     }
 }
-/* ===== ФІЛЬТРИ: акуратне модальне вікно зверху ===== */
 .filters {
-    /* сховано за замовчуванням */
     display: none;
-    /* фіксуємо зверху, по центру */
     position: fixed;
-    z-index: 120; /* поверх карток і меню */
-    top: 92px; /* нижче логотипа/хедера */
+    z-index: 120; 
+    top: 92px; 
     left: 50%;
     transform: translateX(-50%);
     width: min(960px, calc(100% - 32px));
@@ -467,8 +424,6 @@ body {
     -webkit-backdrop-filter: blur(8px);
     color: #fff;
 }
-
-/* показуємо, коли #filters у таргеті */
 #filters:target {
     display: block;
     animation: filtersIn .22s ease-out;
@@ -485,19 +440,15 @@ body {
         transform: translate(-50%, 0);
     }
 }
-
-/* затемнення позаду (псевдоелемент) */
 #filters:target::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -1; /* позаду панелі */
+    z-index: -1;
     background: rgba(0,0,0,.25);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
 }
-
-/* шапка панелі */
 .filters__bar {
     display: flex;
     align-items: center;
@@ -522,8 +473,6 @@ body {
     .filters__close:hover {
         background: rgba(255,255,255,.25);
     }
-
-/* форма */
 .filters form {
     display: flex;
     gap: 12px;
@@ -545,8 +494,6 @@ body {
     background: rgba(0,0,0,.2);
     color: #fff;
 }
-
-/* щоб на дуже вузьких екранах не впиралось у логотип */
 @media (max-width: 480px) {
     .filters {
         top: 84px;
