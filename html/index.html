@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kyiv Art Events</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<script>
+  document.addEventListener('click', e => {
+    const link = e.target.closest('.menu-link, .nav-link');
+    if (!link) return;
+    const d = document.querySelector('.menu details');
+    if (d && d.open) d.open = false;
+  });
+</script>
+
+<body>
+
+    <header class="site-header">
+        <h1 class="logo">
+            <span class="line1">Kyiv Art</span>
+            <span class="line2">Events</span>
+        </h1>
+
+        <!-- КНОПКА МЕНЮ (правий верхній кут) -->
+        <nav class="menu" aria-label="Головне меню">
+            <details>
+                <summary class="menu-btn">Меню</summary>
+                <div class="menu-panel">
+                    <div class="menu-title">Меню</div>
+                    <a class="menu-link" href="#filters">Фільтри</a>
+                    <a class="menu-link" href="details.html">Квитки</a>
+                    <a class="menu-link" href="details.html">Кошик <span class="badge">0</span></a>
+                    <a class="menu-link" href="profile.html">Кабінет</a>
+                </div>
+            </details>
+        </nav>
+
+    </header>
+    <section id="filters" class="filters" aria-label="Фільтри подій">
+        <div class="filters__bar">
+            <strong>Фільтри</strong>
+            <a class="filters__close" href="#" aria-label="Закрити">✕</a>
+        </div>
+
+        <form>
+            <label>Дата: <input type="date" name="date"></label>
+            <label>
+                Ціна:
+                <select name="price">
+                    <option value="">Будь-яка</option>
+                    <option value="free">Безкоштовно</option>
+                    <option value="lt300">&lt; 300 ₴</option>
+                    <option value="300-800">300–800 ₴</option>
+                    <option value="gt800">&gt; 800 ₴</option>
+                </select>
+            </label>
+            <button type="submit" class="btn">Застосувати</button>
+        </form>
+    </section>
+
+    <main class="content" role="main">
+        <section class="cards" aria-label="Найближчі виставки">
+            <article class="card">
+                <img src="../assets/сучасне мистецтво.jpg" alt="Виставка сучасного мистецтва">
+                <h3>Сучасне мистецтво</h3>
+                <p>PinchukArtCentre — 12–31 жовтня</p>
+                <a class="btn" href="#">Деталі</a>
+            </article>
+
+            <article class="card">
+                <img src="../assets/укрж3.jpg" alt="Український живопис">
+                <h3>Український живопис</h3>
+                <p>Мистецький Арсенал — 15–28 жовтня</p>
+                <a class="btn" href="#">Деталі</a>
+            </article>
+
+            <article class="card">
+                <img src="../assets/український живопис.jpg" alt="Фотовиставка Київ">
+                <h3>Фотовиставка «Київ»</h3>
+                <p>НКММК ім. Ханенків — 10–25 жовтня</p>
+                <a class="btn" href="#">Деталі</a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="wrap">
+            <p class="copy">© 2025 Kyiv Art Events | Усі права захищені</p>
+            <nav class="links" aria-label="Контакти">
+                <a href="mailto:evapavlenko455@gmail.com">evapavlenko455@gmail.com</a>
+                <a href="tel:+380682845071">+380&nbsp;68&nbsp;284&nbsp;50&nbsp;71</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>
